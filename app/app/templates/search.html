@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %} 
+<br/>
+<h2> You Searched For..</h2>
+<p>{{ searched }}</p>
+<br/>
+{% for post in posts %}
+<article class="media content-section">
+  <img class="rounded-circle article-img" src="{{ post.image_file }}">
+<div class="media-body">
+<div class="article-metadata">
+    
+    <strong><a class="article-title"  href="#">{{post.author}}</a></strong>    
+    <small class="text-muted">@{{post.user_name}} - {{post.date_posted.strftime('%Y-%m-%d')}}</small>
+
+</div>
+
+<p class="article-content">{{post.content}}</p>
+</div>
+</article>
+{% endfor %}
+{% endblock content %}
